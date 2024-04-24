@@ -3,99 +3,189 @@
 //
 #include <iostream>
 #include "Single-Linked-List.h"
+
 using namespace std;
-template<class T>
-singleList<T> :: singleList(): size(0), head(nullptr){
-    cout<<"new list is created\n";
-}
-template<class T>
-void singleList<T> :: insertAtHead(T element){
-    Node<T>* newNode = new Node<T>(element);
-    newNode->next = head;
-    head = newNode;
-    size++;
-}
-template<class T>
 
-void singleList<T>::insertAtTail(T element){
-    Node<T>* newNode = new Node<T>(element);
-    //han-iterate lhad ma nwsl lel tail
-    Node<T>* currentNode = head;
-    while(currentNode->next != nullptr){
-        currentNode = currentNode->next;
+template<class T>
+singleList<T>::singleList(): size(0), head(nullptr), tail(nullptr) {
+    cout << "new list is created\n";
+}
+
+template<class T>
+void singleList<T>::insertAtHead(T element) {
+    Node<T> *newNode;
+    newNode = new Node<T>(element);
+    if (!head) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        newNode->next = head;
+        head = newNode;
     }
-    currentNode->next = newNode;
     size++;
-    
+}
+
+template<class T>
+
+void singleList<T>::insertAtTail(T element) {
+    Node<T> *newNode;
+    newNode = new Node<T>(element);
+    if (!head) {
+        head = newNode;
+    }
+    tail->next = newNode;
+    tail = newNode;
+    size++;
 };
+
 template<class T>
 
-void singleList<T>::insertAt(T element, int index){};
-template<class T>
-
-void singleList<T>::removeAtHead(){
-    Node <T>* newNode = head;
+void singleList<T>::removeAtHead() {
+    Node<T> *newNode = head;
     head = head->next;
     delete newNode;
     size--;
 };
+
 template<class T>
 
-void singleList<T>::removeAtTail(){
-      Node<T>* newNode = head;
-    while(newNode->next != nullptr) {
-        newNode = newNode->next;
+void singleList<T>::removeAtTail() {
+    for (Node<T> *cur = head; cur; cur = cur->next) {
+        if (cur->next == tail) {
+            delete tail;
+            tail = cur;
+            tail->next = nullptr;
+        }
     }
-    delete newNode;
     size--;
 };
+
 template<class T>
 
-void singleList<T>::removeAt(int index){};
-template<class T>
-
-T singleList<T>::retrieveAt(int index){};
-template<class T>
-
-void singleList<T>::replaceAt(T newElement, int index){};
-template<class T>
-
-bool singleList<T>::isExist(T element){
-    return true;
+bool singleList<T>::isEmpty() {
+    return !size;
 };
+
 template<class T>
 
-void singleList<T>::isItemAtEqual(T element, int index){};
+int singleList<T>::linkedListSize() { return size; };
+
 template<class T>
 
-void singleList<T>::swap(int firstItemIdx, int secondItemIdx){};    // swap tw nodes without swapping data.
-template<class T>
-
-bool singleList<T>:: isEmpty(){
-     return !size;
-};
-template<class T>
-
-int singleList<T>::linkedListSize(){return size;};
-template<class T>
-
-void singleList<T>::clear(){
-   Node<T>* currentNode = head;
-    while (currentNode != nullptr) {
-        Node<T>* nextNode = currentNode->next;
-        delete currentNode;
-        currentNode = nextNode;
+void singleList<T>::clear() {
+    while (head) {
+        removeAtHead();
     }
     head = nullptr;
     size = 0;
 };
+
 template<class T>
 
-void singleList<T>::print(){
-    Node<T>* newNode = head;
-    while(newNode != nullptr){
-        cout<<newNode->data<<" ";
-       newNode = newNode->next;
+void singleList<T>::print() {
+    Node<T> *newNode = head;
+    cout << '\n';
+    while (newNode != nullptr) {
+        cout << newNode->data << " ";
+        newNode = newNode->next;
     }
+    cout << '\n';
+};
 
+template<class T>
+
+void singleList<T>::replaceAt(T newElement, int index) {
+    int cnt{0};
+    for (Node<T> *cur = head; cur; cur = cur->next, cnt++) {
+        if (cnt == index) cur->data = newElement;
+    }
+};
+
+template<class T>
+
+bool singleList<T>::isExist(T element) {
+    for (Node<T> *cur = head; cur; cur = cur->next) {
+        if (cur->data == element) return true;
+    }
+    return false;
+};
+
+template<class T>
+
+T singleList<T>::retrieveAt(int index) {
+    int cnt{0};
+    for (Node<T> *cur = head; cur; cur = cur->next, cnt++) {
+        if (cnt == index)return cur->data;
+    }
+    return false;
+};
+
+
+template<class T>
+
+bool singleList<T>::isItemAtEqual(T element, int index) {
+    int cnt{0};
+    for (Node<T> *cur = head; cur; cur = cur->next, cnt++) {
+        if (cnt == index) return (element == cur->data);
+    }
+    return false;
+};
+
+template<class T>
+
+void singleList<T>::removeAt(int index) {
+    int cnt{0};
+    if (!index) {
+        removeAtHead();
+        return;
+
+    }
+    if (index == size - 1) {
+        removeAtTail();
+        return;
+    }
+    for (Node<T> *cur = head; cur; cur = cur->next, cnt++) {
+        if (cnt == index - 1) {
+            Node<T> *temp = cur->next;
+            cur->next = cur->next->next;
+            delete temp;
+            size--;
+        }
+    }
+};
+
+template<class T>
+
+void singleList<T>::insertAt(T element, int index) {
+    int cnt{0};
+    if (!head) {
+        insertAtHead(element);
+    } else if (size - 1 == index) {
+        insertAtTail(element);
+    } else {
+        Node<T> *newNode = new Node(element);
+        for (Node<T> *cur = head; cur; cur = cur->next, cnt++) {
+            if (index - 1 == cnt) {
+                Node<T> *temp = cur->next;
+                newNode->next = temp;
+                cur->next = newNode;
+            }
+        }
+    }
+};
+
+template<class T>
+void singleList<T>::swap(int firstItemIdx, int secondItemIdx) {
+    int cnt1{0}, cnt2{0};
+    Node<T> *firstNode;
+    Node<T> *secondNode;
+    for (Node<T> *cur = head; cur; cur = cur->next, cnt1++, cnt2++) {
+        if (firstItemIdx == cnt1) {
+            firstNode = cur;
+        }
+        if (secondItemIdx == cnt2) {
+            secondNode = cur;
+        }
+    }
+    std::swap(firstNode,secondNode);
 };

@@ -6,22 +6,26 @@
 #define CS214_A1_SINGLE_LINKED_LIST_H
 template <class T>
 class Node {
-
 public:
     int data;
     Node *next;
-    Node(T val) : data(val), next(nullptr){
-    }
+    Node *prev;
+    Node(T val);
 };
+
+template<class T>
+Node<T>::Node(T val) : data(val), next(nullptr){
+}
 
 template <class T>
 class singleList{
 private:
     int size;
-public:
     Node<T> *head;
+    Node<T> *tail;
+public:
     singleList();
-    void insertAtHead(T element);
+    void insertAtHead(T element) ;
 
     void insertAtTail(T element);
 
@@ -39,7 +43,7 @@ public:
 
     bool isExist(T element);
 
-    void isItemAtEqual(T element, int index);
+    bool isItemAtEqual(T element, int index);
 
     void swap(int firstItemIdx, int secondItemIdx);    // swap tw nodes without swapping data.
 

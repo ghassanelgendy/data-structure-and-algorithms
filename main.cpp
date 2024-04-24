@@ -5,68 +5,56 @@
 using namespace std;
 
 int main() {
-//    Node<int>* head;
-//    Node<int> first(5);
-//    head  = &first;
-//    cout << first.data;
-//    cout<<head->data<<"\n";
-//    Node<int>* second = new Node(9);
-//    first.next = second;
-//    cout<<(first.next)->data;
-//    Node<int>* third = new Node(6);
-//    second->next = third;
-//    cout<<first.next->next->data;
-//    Node<int>* fourth = new Node(4);
-//    third->next = fourth;
-//    cout<<first.next->next->next->data;
-//    Node<int>* fifth = new Node(4);
-//    fourth->next = fifth;
-//    cout<<first.next->next->next->next->data;
-singleList<int> listaya;
+    singleList<int> list;
+    cout << "\n---------------------------Inserting to head-------------------\n";
 //insert at head test
-listaya.insertAtHead(5);
-listaya.insertAtHead(9);
-listaya.insertAtHead(6);
-Node<int>* firstElement = listaya.head;
-cout<<firstElement->data<<"\n";
-cout<<firstElement->next->data<<"\n";
-cout<<firstElement->next->next->data<<"\n";
-cout<<"---------------------------------------------------\n";
-
+    list.insertAtHead(5);
+    list.insertAtHead(9);
+    list.insertAtHead(6);
+    cout << "\n----------------------------Remove at head-----------------------\n";
 //remove at head test
-listaya.removeAtHead();
-cout<<listaya.head->data<<"\n";
-cout<<"---------------------------------------------------\n";
-
+    list.removeAtHead();
+    cout << "\n-----------------------isEmpty----------------------------\n";
 //is empty test
-cout<<listaya.isEmpty()<<"\n";
-singleList<int> list_tanya;
-cout<<list_tanya.isEmpty()<<"\n";
-cout<<"---------------------------------------------------\n";
+    cout << list.isEmpty() << "\n";
+    singleList<int> list_tanya;
+    cout << list_tanya.isEmpty() << "\n";
+    cout << "\n-----------------------Size test----------------------------\n";
 
 //linked list size test
-cout<<listaya.linkedListSize()<<"\n";
-cout<<list_tanya.linkedListSize()<<"\n";
-cout<<"---------------------------------------------------\n";
-
+    cout << list.linkedListSize() << "\n";
+    cout << list_tanya.linkedListSize() << "\n";
+    cout << "\n-----------------------insertAtTail----------------------------\n";
 
 // insert at tail test
-listaya.insertAtTail(7);
-listaya.insertAtTail(8);
-
+    list.insertAtTail(7);
+    list.insertAtTail(8);
+    list.print();
+    cout << "\n-----------------------print----------------------------\n";
 
 //print test
-listaya.print();
-cout<<"\n---------------------------------------------------\n";
+    list.print();
+    cout << "\n----------------------removeAtTail---------------------------\n";
 
 // remove at tail test
-listaya.removeAtTail();
-listaya.print();
-//clear test
-listaya.clear();
-cout<<listaya.isEmpty()<<"\n";
-cout<<listaya.linkedListSize()<<"\n";
-cout<<"---------------------------------------------------\n";
+    list.removeAtTail();
+    list.print();
+    cout << "\n---------------------------isExist-------------------\n";
+    cout << list.isExist(6);
+    cout << "\n---------------------------retrieveAt-------------------\n";
+    cout << list.retrieveAt(2);
+    cout << "\n---------------------------retrieveAt-------------------\n";
+    cout << list.isItemAtEqual(7, 3);
+    cout << "\n---------------------------removeAt-------------------\n";
+    list.insertAtHead(99);
+
+    list.insertAtHead(3);
+    cout << "\n---------------------------currentValue-------------------\n";
+    list.print();
+
+    cout << "\n---------------------------insertAt-------------------\n";
+    list.insertAt(2,2);
+
+    list.print();
+
 }
-
-
