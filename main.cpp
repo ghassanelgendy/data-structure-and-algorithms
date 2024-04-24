@@ -26,9 +26,11 @@ singleList<int> listaya;
 //insert at head test
 listaya.insertAtHead(5);
 listaya.insertAtHead(9);
+listaya.insertAtHead(6);
 Node<int>* firstElement = listaya.head;
 cout<<firstElement->data<<"\n";
 cout<<firstElement->next->data<<"\n";
+cout<<firstElement->next->next->data<<"\n";
 cout<<"---------------------------------------------------\n";
 
 //remove at head test
@@ -47,4 +49,24 @@ cout<<listaya.linkedListSize()<<"\n";
 cout<<list_tanya.linkedListSize()<<"\n";
 cout<<"---------------------------------------------------\n";
 
+
+// insert at tail test
+listaya.insertAtTail(7);
+listaya.insertAtTail(8);
+
+
+//print test
+listaya.print();
+cout<<"\n---------------------------------------------------\n";
+
+// remove at tail test
+listaya.removeAtTail();
+listaya.print();
+//clear test
+listaya.clear();
+cout<<listaya.isEmpty()<<"\n";
+cout<<listaya.linkedListSize()<<"\n";
+cout<<"---------------------------------------------------\n";
 }
+
+

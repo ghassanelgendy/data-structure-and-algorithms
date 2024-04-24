@@ -18,6 +18,14 @@ void singleList<T> :: insertAtHead(T element){
 template<class T>
 
 void singleList<T>::insertAtTail(T element){
+    Node<T>* newNode = new Node<T>(element);
+    //han-iterate lhad ma nwsl lel tail
+    Node<T>* currentNode = head;
+    while(currentNode->next != nullptr){
+        currentNode = currentNode->next;
+    }
+    currentNode->next = newNode;
+    size++;
     
 };
 template<class T>
@@ -33,7 +41,14 @@ void singleList<T>::removeAtHead(){
 };
 template<class T>
 
-void singleList<T>::removeAtTail(){};
+void singleList<T>::removeAtTail(){
+      Node<T>* newNode = head;
+    while(newNode->next != nullptr) {
+        newNode = newNode->next;
+    }
+    delete newNode;
+    size--;
+};
 template<class T>
 
 void singleList<T>::removeAt(int index){};
@@ -64,9 +79,23 @@ template<class T>
 int singleList<T>::linkedListSize(){return size;};
 template<class T>
 
-void singleList<T>::clear(){};
+void singleList<T>::clear(){
+   Node<T>* currentNode = head;
+    while (currentNode != nullptr) {
+        Node<T>* nextNode = currentNode->next;
+        delete currentNode;
+        currentNode = nextNode;
+    }
+    head = nullptr;
+    size = 0;
+};
 template<class T>
 
 void singleList<T>::print(){
+    Node<T>* newNode = head;
+    while(newNode != nullptr){
+        cout<<newNode->data<<" ";
+       newNode = newNode->next;
+    }
 
 };
