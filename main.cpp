@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Single-Linked-List.h"
+#include "Single-Linked-List.cpp"
 
 using namespace std;
 
@@ -21,5 +22,29 @@ int main() {
 //    Node<int>* fifth = new Node(4);
 //    fourth->next = fifth;
 //    cout<<first.next->next->next->next->data;
+singleList<int> listaya;
+//insert at head test
+listaya.insertAtHead(5);
+listaya.insertAtHead(9);
+Node<int>* firstElement = listaya.head;
+cout<<firstElement->data<<"\n";
+cout<<firstElement->next->data<<"\n";
+cout<<"---------------------------------------------------\n";
+
+//remove at head test
+listaya.removeAtHead();
+cout<<listaya.head->data<<"\n";
+cout<<"---------------------------------------------------\n";
+
+//is empty test
+cout<<listaya.isEmpty()<<"\n";
+singleList<int> list_tanya;
+cout<<list_tanya.isEmpty()<<"\n";
+cout<<"---------------------------------------------------\n";
+
+//linked list size test
+cout<<listaya.linkedListSize()<<"\n";
+cout<<list_tanya.linkedListSize()<<"\n";
+cout<<"---------------------------------------------------\n";
 
 }

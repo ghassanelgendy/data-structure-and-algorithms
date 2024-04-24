@@ -13,6 +13,7 @@ void singleList<T> :: insertAtHead(T element){
     Node<T>* newNode = new Node<T>(element);
     newNode->next = head;
     head = newNode;
+    size++;
 }
 template<class T>
 
@@ -24,7 +25,12 @@ template<class T>
 void singleList<T>::insertAt(T element, int index){};
 template<class T>
 
-void singleList<T>::removeAtHead(){};
+void singleList<T>::removeAtHead(){
+    Node <T>* newNode = head;
+    head = head->next;
+    delete newNode;
+    size--;
+};
 template<class T>
 
 void singleList<T>::removeAtTail(){};
@@ -39,7 +45,9 @@ template<class T>
 void singleList<T>::replaceAt(T newElement, int index){};
 template<class T>
 
-bool singleList<T>::isExist(T element){};
+bool singleList<T>::isExist(T element){
+    return true;
+};
 template<class T>
 
 void singleList<T>::isItemAtEqual(T element, int index){};

@@ -17,9 +17,9 @@ public:
 template <class T>
 class singleList{
 private:
-    Node<T> *head;
     int size;
 public:
+    Node<T> *head;
     singleList();
     void insertAtHead(T element);
 
@@ -50,6 +50,8 @@ public:
     void clear();
 
     void print();
+
+
 };
 
 #endif //CS214_A1_SINGLE_LINKED_LIST_H
