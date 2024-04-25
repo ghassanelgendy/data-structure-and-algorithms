@@ -79,6 +79,12 @@ build CMakeFiles/CS214_A1.dir/main.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Deb
   OBJECT_DIR = CMakeFiles\CS214_A1.dir
   OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir
 
+build CMakeFiles/CS214_A1.dir/Queue/Queue.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/Queue/Queue.cpp || cmake_object_order_depends_target_CS214_A1
+  DEP_FILE = CMakeFiles\CS214_A1.dir\Queue\Queue.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CS214_A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir\Queue
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CS214_A1
@@ -87,7 +93,7 @@ build CMakeFiles/CS214_A1.dir/main.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Deb
 #############################################
 # Link the executable CS214_A1.exe
 
-build CS214_A1.exe: CXX_EXECUTABLE_LINKER__CS214_A1_Debug CMakeFiles/CS214_A1.dir/Linked_List/SingleList.cpp.obj CMakeFiles/CS214_A1.dir/Linked_List/DoubleList.cpp.obj CMakeFiles/CS214_A1.dir/Linked_List/CircularList.cpp.obj CMakeFiles/CS214_A1.dir/Linked_List/Node.cpp.obj CMakeFiles/CS214_A1.dir/main.cpp.obj
+build CS214_A1.exe: CXX_EXECUTABLE_LINKER__CS214_A1_Debug CMakeFiles/CS214_A1.dir/Linked_List/SingleList.cpp.obj CMakeFiles/CS214_A1.dir/Linked_List/DoubleList.cpp.obj CMakeFiles/CS214_A1.dir/Linked_List/CircularList.cpp.obj CMakeFiles/CS214_A1.dir/Linked_List/Node.cpp.obj CMakeFiles/CS214_A1.dir/main.cpp.obj CMakeFiles/CS214_A1.dir/Queue/Queue.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CS214_A1.dir

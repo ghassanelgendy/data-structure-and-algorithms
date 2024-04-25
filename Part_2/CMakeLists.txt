@@ -8,4 +8,5 @@ add_executable(CS214_A1
         "Linked List/DoubleList.cpp"
         "Linked List/CircularList.cpp"
         "Linked List/Node.cpp"
-        main.cpp)
+        main.cpp
+        Queue/Queue.cpp)

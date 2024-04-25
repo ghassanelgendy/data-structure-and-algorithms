@@ -5,10 +5,70 @@
 #include "./Linked List/CircularList.cpp"
 #include "./Stack/stackArrayBased.cpp"
 #include "./Stack/stackLinkedListBased.cpp"
+#include "./Queue/Queue.cpp"
 
 using namespace std;
 
 int main() {
+    //================================================================
+    //==========================QUEUE================
+    cout << "\n=============[QUEUE TEST]==============\n";
+
+    Queue<int> queue(10);
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    cout<< queue.queueSize() << endl;
+    queue.print();
+    cout << "First element: " << queue.first() << "\n";
+    cout << "Dequeued: " << queue.dequeue() << "\n";
+    queue.print();
+    cout << "Queue size: " << queue.queueSize() << "\n";
+    queue.clear();
+    queue.print();
+
+    cout<< "\n======================================================================\n";
+
+
+    Queue <string> queuename;
+    cout << "Queue size: " << queuename.queueSize() << endl;
+    queuename.enqueue("Jana");
+    queuename.enqueue("Mohamed");
+    queuename.enqueue("Ramadan");
+    queuename.enqueue("Mahmoud");
+    cout << "Queue size: " << queuename.queueSize() << endl;
+    cout << "Dequeued: " << queuename.dequeue() << endl;
+    queuename.enqueue("Mohamed");
+    cout << "Dequeued: " << queuename.dequeue() << endl;
+    queuename.print();
+    cout << "First element: " << queuename.first() << endl;
+    queuename.clear();
+    queuename.print();
+    queuename.enqueue("Jana");
+    queuename.print();
+    queuename.clear();
+    queuename.dequeue();
+    queuename.print();
+
+    cout<< "\n======================================================================\n";
+
+    Queue<int> queuelist;
+    queuelist.enqueue(1);
+    queuelist.enqueue(2);
+    queuelist.enqueue(3);
+    cout << "Queue size before clearing: " << queuelist.queueSize() << endl;
+    queuelist.clear();
+    cout << "Queue size after clearing: " << queuelist.queueSize() << endl;
+
+    cout<< "\n======================================================================\n";
+
+
+    Queue<int> queuetest(3);
+    queuetest.enqueue(1);
+    queuetest.enqueue(2);
+    queuetest.enqueue(3);
+    queuetest.enqueue(4); //queuetest is Full
+    queuetest.clear();
     //================================================================
     //==========================STACK LINKEDLIST BASED================
     cout << "\n=============[LINKEDLIST BASED STACK TEST]==============\n";
