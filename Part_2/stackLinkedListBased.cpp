@@ -2,7 +2,7 @@
 using namespace std;
 
 template <typename T>
-class stack {
+class stackLinked {
 private:
     struct Node {
         T data;
@@ -12,7 +12,7 @@ private:
     Node* top; // byshawer 3la el top of the stack
 
 public:
-    stack() {
+    stackLinked() {
         top = nullptr; // Initialize top to nullptr (empty stack)
     }
 
@@ -79,24 +79,3 @@ public:
     }
 };
 
-int main() {
-    stack<int> s;
-    s.Pop();
-    s.push(5);
-    s.push(6);
-    s.push(55);
-    s.push(25);
-    s.print();
-    cout << "number of elements in the stack: " << s.stackSize() << endl;
-    s.Pop();
-    s.push(65);
-    s.print();
-    int value;
-    s.getTop(value);
-    cout << "number of elements in the stack: " << s.stackSize() << endl;
-    s.clear();
-    s.push(5);
-    s.print();
-
-    return 0;
-}

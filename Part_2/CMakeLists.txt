@@ -5,4 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(CS214_A1 main.cpp
         Single-Linked-List.cpp
-        Single-Linked-List.h)
+        Single-Linked-List.h
+        stackArrayBased.cpp
+        stackLinkedListBased.cpp
+        Double-Linked-List.cpp
+        Circular-Linked-List.cpp)

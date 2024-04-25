@@ -1,0 +1,12 @@
+# ninja log v5
+5	898	7357034316576101	CMakeFiles/CS214_A1.dir/stackArrayBased.cpp.obj	234dc00488d2ee6
+5	977	7357047062921175	CMakeFiles/CS214_A1.dir/Single-Linked-List.cpp.obj	6a207f89486fa66e
+16	889	7357034316478604	CMakeFiles/CS214_A1.dir/stackLinkedListBased.cpp.obj	5214e09778218f51
+5	898	7357048939177327	CMakeFiles/CS214_A1.dir/main.cpp.obj	29ee4be15f51a5cc
+898	1065	7357048940812590	CS214_A1.exe	d4914948bfd5180
+22	857	7357053279921975	CMakeFiles/CS214_A1.dir/Double-Linked-List.cpp.obj	5ed0b742b6edd459
+17	897	7357053280329968	CMakeFiles/CS214_A1.dir/Circular-Linked-List.cpp.obj	28c204e22db48b72
+5	897	7357053280337470	CMakeFiles/CS214_A1.dir/Single-Linked-List.cpp.obj	6a207f89486fa66e
+12	1028	7357053281626439	CMakeFiles/CS214_A1.dir/main.cpp.obj	29ee4be15f51a5cc
+5	1034	7357053857828442	CMakeFiles/CS214_A1.dir/main.cpp.obj	29ee4be15f51a5cc
+1034	1198	7357053859429555	CS214_A1.exe	3fbcf53cd30a870e
