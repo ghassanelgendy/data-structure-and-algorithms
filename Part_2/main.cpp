@@ -18,7 +18,7 @@ int main() {
     queue.enqueue(1);
     queue.enqueue(2);
     queue.enqueue(3);
-    cout<< queue.queueSize() << endl;
+    cout << queue.queueSize() << endl;
     queue.print();
     cout << "First element: " << queue.first() << "\n";
     cout << "Dequeued: " << queue.dequeue() << "\n";
@@ -27,10 +27,10 @@ int main() {
     queue.clear();
     queue.print();
 
-    cout<< "\n======================================================================\n";
+    cout << "\n======================================================================\n";
 
 
-    Queue <string> queuename;
+    Queue<string> queuename;
     cout << "Queue size: " << queuename.queueSize() << endl;
     queuename.enqueue("Jana");
     queuename.enqueue("Mohamed");
@@ -50,7 +50,7 @@ int main() {
     queuename.dequeue();
     queuename.print();
 
-    cout<< "\n======================================================================\n";
+    cout << "\n======================================================================\n";
 
     Queue<int> queuelist;
     queuelist.enqueue(1);
@@ -60,7 +60,7 @@ int main() {
     queuelist.clear();
     cout << "Queue size after clearing: " << queuelist.queueSize() << endl;
 
-    cout<< "\n======================================================================\n";
+    cout << "\n======================================================================\n";
 
 
     Queue<int> queuetest(3);
@@ -164,7 +164,7 @@ int main() {
 
     SingleList<int> list;
 
-    //  === 1. Insert at Head (Multiple Elements) === 
+    //  === 1. Insert at Head (Multiple Elements) ===
     std::cout << "\n=== [ Test: Insert at Head (Multiple Elements) ] ===\n ";
     list.insertAtHead(5);
     list.insertAtHead(9);
@@ -174,7 +174,7 @@ int main() {
     list.print();
     std::cout << "Expected result: 6 9 5\n";
 
-    //  === 2. Remove at Head === 
+    //  === 2. Remove at Head ===
     std::cout << "\n=== [ Test: Remove at Head ] ===\n ";
     list.removeAtHead();
 
@@ -182,17 +182,17 @@ int main() {
     list.print();
     std::cout << "Expected result: 9 5\n";
 
-    //  === 3. Check if the list is empty === 
+    //  === 3. Check if the list is empty ===
     std::cout << "\n=== [ Test: Check if the list is empty ] ===\n ";
     std::cout << "Is list empty? " << list.isEmpty() << std::endl;
     std::cout << "Expected result: 0\n";
 
-    //  === 4. Check the size of the list === 
+    //  === 4. Check the size of the list ===
     std::cout << "\n=== [ Test: Check the size of the list ] ===\n ";
     std::cout << "Size of the list: " << list.linkedListSize() << std::endl;
     std::cout << "Expected result: 2\n";
 
-    //  === 5. Insert at Tail (Multiple Elements) === 
+    //  === 5. Insert at Tail (Multiple Elements) ===
     std::cout << "\n=== [ Test: Insert at Tail (Multiple Elements) ] ===\n ";
     list.insertAtTail(7);
     list.insertAtTail(8);
@@ -201,7 +201,7 @@ int main() {
     list.print();
     std::cout << "Expected result: 9 5 7 8\n";
 
-    //  === 6. Insert at Index === 
+    //  === 6. Insert at Index ===
     std::cout << "\n=== [ Test: Insert at Index ] ===\n ";
     list.insertAt(3, 1); // Insert at index 1 (between 9 and 5)
 
@@ -209,7 +209,7 @@ int main() {
     list.print();
     std::cout << "Expected result: 9 3 5 7 8\n";
 
-    //  === 7. Remove at Index === 
+    //  === 7. Remove at Index ===
     std::cout << "\n=== [ Test: Remove at Index ] ===\n ";
     list.removeAt(3); // Remove element at index 3 (7)
 
@@ -217,28 +217,28 @@ int main() {
     list.print();
     std::cout << "Expected result: 9 3 5 7\n";
 
-    //  === 8. Retrieve at Index === 
+    //  === 8. Retrieve at Index ===
     std::cout << "\n=== [ Test: Retrieve at Index ] ===\n ";
     int retrievedValue = list.retrieveAt(1);
     std::cout << "Value retrieved at index 1: " << retrievedValue << std::endl;
     std::cout << "Expected result: 3\n";
 
-    //  === 9. Replace at Index === 
+    //  === 9. Replace at Index ===
     std::cout << "\n=== [ Test: Replace at Index ] ===\n ";
     list.replaceAt(40, 2); // Replace element at index 2 (5) with 40
 
     // Test: Print the list
     list.print();
     std::cout << "Expected result: 9 3 40 7\n";
-    //  === 10. isExist === 
+    //  === 10. isExist ===
     std::cout << "\n=== [ Test: isExist ] ===\n ";
-    std::cout << "Does element 8 exist? " << list.isExist(8) << std::endl;
+    std::cout << "Does element 40 exist? " << list.isExist(40) << std::endl;
     std::cout << "Expected result: 1\n";
 
     std::cout << "Does element 10 exist? " << list.isExist(10) << std::endl;
     std::cout << "Expected result: 0\n";
 
-    //  === 11. Clear === 
+    //  === 11. Clear ===
     std::cout << "\n=== [ Test: Clear ] ===\n ";
     list.clear();
 
@@ -246,6 +246,186 @@ int main() {
     std::cout << "Expected result: 1\n";
 
     std::cout << "Size of the list after clear: " << list.linkedListSize() << std::endl;
+    std::cout << "Expected result: 0\n";
+
+    //================================================================
+    //========================DOUBLE LINKED LIST======================
+    std::cout << "\n=============[DOUBLE LINKED LIST TEST]==============\n";
+
+    SingleList<int> doubleList;
+
+    //  === 1. Insert at Head (Multiple Elements) ===
+    std::cout << "\n=== [ Test: Insert at Head (Multiple Elements) ] ===\n ";
+    doubleList.insertAtHead(5);
+    doubleList.insertAtHead(9);
+    doubleList.insertAtHead(6);
+
+    // Test: Print the doubleList
+    doubleList.print();
+    std::cout << "Expected result: 6 9 5\n";
+
+    //  === 2. Remove at Head ===
+    std::cout << "\n=== [ Test: Remove at Head ] ===\n ";
+    doubleList.removeAtHead();
+
+    // Test: Print the updated doubleList
+    doubleList.print();
+    std::cout << "Expected result: 9 5\n";
+
+    //  === 3. Check if the doubleList is empty ===
+    std::cout << "\n=== [ Test: Check if the doubleList is empty ] ===\n ";
+    std::cout << "Is doubleList empty? " << doubleList.isEmpty() << std::endl;
+    std::cout << "Expected result: 0\n";
+
+    //  === 4. Check the size of the doubleList ===
+    std::cout << "\n=== [ Test: Check the size of the doubleList ] ===\n ";
+    std::cout << "Size of the doubleList: " << doubleList.linkedListSize() << std::endl;
+    std::cout << "Expected result: 2\n";
+
+    //  === 5. Insert at Tail (Multiple Elements) ===
+    std::cout << "\n=== [ Test: Insert at Tail (Multiple Elements) ] ===\n ";
+    doubleList.insertAtTail(7);
+    doubleList.insertAtTail(8);
+
+    // Test: Print the doubleList
+    doubleList.print();
+    std::cout << "Expected result: 9 5 7 8\n";
+
+    //  === 6. Insert at Index ===
+    std::cout << "\n=== [ Test: Insert at Index ] ===\n ";
+    doubleList.insertAt(3, 1); // Insert at index 1 (between 9 and 5)
+
+    // Test: Print the doubleList
+    doubleList.print();
+    std::cout << "Expected result: 9 3 5 7 8\n";
+
+    //  === 7. Remove at Index ===
+    std::cout << "\n=== [ Test: Remove at Index ] ===\n ";
+    doubleList.removeAt(3); // Remove element at index 3 (7)
+
+    // Test: Print the doubleList
+    doubleList.print();
+    std::cout << "Expected result: 9 3 5 7\n";
+
+    //  === 8. Retrieve at Index ===
+    std::cout << "\n=== [ Test: Retrieve at Index ] ===\n ";
+    int retrievedValueDouble = doubleList.retrieveAt(1);
+    std::cout << "Value retrieved at index 1: " << retrievedValueDouble << std::endl;
+    std::cout << "Expected result: 3\n";
+
+    //  === 9. Replace at Index ===
+    std::cout << "\n=== [ Test: Replace at Index ] ===\n ";
+    doubleList.replaceAt(40, 2); // Replace element at index 2 (5) with 40
+
+    // Test: Print the doubleList
+    doubleList.print();
+    std::cout << "Expected result: 9 3 40 7\n";
+    //  === 10. isExist ===
+    std::cout << "\n=== [ Test: isExist ] ===\n ";
+    std::cout << "Does element 40 exist? " << doubleList.isExist(40) << std::endl;
+    std::cout << "Expected result: 1\n";
+
+    std::cout << "Does element 10 exist? " << doubleList.isExist(10) << std::endl;
+    std::cout << "Expected result: 0\n";
+
+    //  === 11. Clear ===
+    std::cout << "\n=== [ Test: Clear ] ===\n ";
+    doubleList.clear();
+
+    std::cout << "Is doubleList empty after clear? " << doubleList.isEmpty() << std::endl;
+    std::cout << "Expected result: 1\n";
+
+    std::cout << "Size of the doubleList after clear: " << doubleList.linkedListSize() << std::endl;
+    std::cout << "Expected result: 0\n";
+
+    //================================================================
+    //========================CIRLCE LINKED LIST======================
+    std::cout << "\n=============[CIRLCE LINKED LIST TEST]==============\n";
+
+    SingleList<int> circleList;
+
+    //  === 1. Insert at Head (Multiple Elements) ===
+    std::cout << "\n=== [ Test: Insert at Head (Multiple Elements) ] ===\n ";
+    circleList.insertAtHead(5);
+    circleList.insertAtHead(9);
+    circleList.insertAtHead(6);
+
+    // Test: Print the circleList
+    circleList.print();
+    std::cout << "Expected result: 6 9 5\n";
+
+    //  === 2. Remove at Head ===
+    std::cout << "\n=== [ Test: Remove at Head ] ===\n ";
+    circleList.removeAtHead();
+
+    // Test: Print the updated circleList
+    circleList.print();
+    std::cout << "Expected result: 9 5\n";
+
+    //  === 3. Check if the circleList is empty ===
+    std::cout << "\n=== [ Test: Check if the circleList is empty ] ===\n ";
+    std::cout << "Is circleList empty? " << circleList.isEmpty() << std::endl;
+    std::cout << "Expected result: 0\n";
+
+    //  === 4. Check the size of the circleList ===
+    std::cout << "\n=== [ Test: Check the size of the circleList ] ===\n ";
+    std::cout << "Size of the circleList: " << circleList.linkedListSize() << std::endl;
+    std::cout << "Expected result: 2\n";
+
+    //  === 5. Insert at Tail (Multiple Elements) ===
+    std::cout << "\n=== [ Test: Insert at Tail (Multiple Elements) ] ===\n ";
+    circleList.insertAtTail(7);
+    circleList.insertAtTail(8);
+
+    // Test: Print the circleList
+    circleList.print();
+    std::cout << "Expected result: 9 5 7 8\n";
+
+    //  === 6. Insert at Index ===
+    std::cout << "\n=== [ Test: Insert at Index ] ===\n ";
+    circleList.insertAt(3, 1); // Insert at index 1 (between 9 and 5)
+
+    // Test: Print the circleList
+    circleList.print();
+    std::cout << "Expected result: 9 3 5 7 8\n";
+
+    //  === 7. Remove at Index ===
+    std::cout << "\n=== [ Test: Remove at Index ] ===\n ";
+    circleList.removeAt(3); // Remove element at index 3 (7)
+
+    // Test: Print the circleList
+    circleList.print();
+    std::cout << "Expected result: 9 3 5 7\n";
+
+    //  === 8. Retrieve at Index ===
+    std::cout << "\n=== [ Test: Retrieve at Index ] ===\n ";
+    int retrievedValueCircle = circleList.retrieveAt(1);
+    std::cout << "Value retrieved at index 1: " << retrievedValueCircle << std::endl;
+    std::cout << "Expected result: 3\n";
+
+    //  === 9. Replace at Index ===
+    std::cout << "\n=== [ Test: Replace at Index ] ===\n ";
+    circleList.replaceAt(40, 2); // Replace element at index 2 (5) with 40
+
+    // Test: Print the circleList
+    circleList.print();
+    std::cout << "Expected result: 9 3 40 7\n";
+    //  === 10. isExist ===
+    std::cout << "\n=== [ Test: isExist ] ===\n ";
+    std::cout << "Does element 40 exist? " << circleList.isExist(40) << std::endl;
+    std::cout << "Expected result: 1\n";
+
+    std::cout << "Does element 10 exist? " << circleList.isExist(10) << std::endl;
+    std::cout << "Expected result: 0\n";
+
+    //  === 11. Clear ===
+    std::cout << "\n=== [ Test: Clear ] ===\n ";
+    circleList.clear();
+
+    std::cout << "Is circleList empty after clear? " << circleList.isEmpty() << std::endl;
+    std::cout << "Expected result: 1\n";
+
+    std::cout << "Size of the circleList after clear: " << circleList.linkedListSize() << std::endl;
     std::cout << "Expected result: 0\n";
 
     return 0;
