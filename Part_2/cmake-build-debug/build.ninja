@@ -49,38 +49,32 @@ cmake_ninja_workdir = F$:/Github/CS214-A1/Part_2/cmake-build-debug/
 
 build cmake_object_order_depends_target_CS214_A1: phony || CMakeFiles/CS214_A1.dir
 
+build CMakeFiles/CS214_A1.dir/Linked_List/SingleList.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/Linked$ List/SingleList.cpp || cmake_object_order_depends_target_CS214_A1
+  DEP_FILE = CMakeFiles\CS214_A1.dir\Linked_List\SingleList.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CS214_A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir\Linked_List
+
+build CMakeFiles/CS214_A1.dir/Linked_List/DoubleList.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/Linked$ List/DoubleList.cpp || cmake_object_order_depends_target_CS214_A1
+  DEP_FILE = CMakeFiles\CS214_A1.dir\Linked_List\DoubleList.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CS214_A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir\Linked_List
+
+build CMakeFiles/CS214_A1.dir/Linked_List/CircularList.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/Linked$ List/CircularList.cpp || cmake_object_order_depends_target_CS214_A1
+  DEP_FILE = CMakeFiles\CS214_A1.dir\Linked_List\CircularList.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CS214_A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir\Linked_List
+
+build CMakeFiles/CS214_A1.dir/Linked_List/Node.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/Linked$ List/Node.cpp || cmake_object_order_depends_target_CS214_A1
+  DEP_FILE = CMakeFiles\CS214_A1.dir\Linked_List\Node.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\CS214_A1.dir
+  OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir\Linked_List
+
 build CMakeFiles/CS214_A1.dir/main.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/main.cpp || cmake_object_order_depends_target_CS214_A1
   DEP_FILE = CMakeFiles\CS214_A1.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\CS214_A1.dir
-  OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir
-
-build CMakeFiles/CS214_A1.dir/Single-Linked-List.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/Single-Linked-List.cpp || cmake_object_order_depends_target_CS214_A1
-  DEP_FILE = CMakeFiles\CS214_A1.dir\Single-Linked-List.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\CS214_A1.dir
-  OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir
-
-build CMakeFiles/CS214_A1.dir/stackArrayBased.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/stackArrayBased.cpp || cmake_object_order_depends_target_CS214_A1
-  DEP_FILE = CMakeFiles\CS214_A1.dir\stackArrayBased.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\CS214_A1.dir
-  OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir
-
-build CMakeFiles/CS214_A1.dir/stackLinkedListBased.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/stackLinkedListBased.cpp || cmake_object_order_depends_target_CS214_A1
-  DEP_FILE = CMakeFiles\CS214_A1.dir\stackLinkedListBased.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\CS214_A1.dir
-  OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir
-
-build CMakeFiles/CS214_A1.dir/Double-Linked-List.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/Double-Linked-List.cpp || cmake_object_order_depends_target_CS214_A1
-  DEP_FILE = CMakeFiles\CS214_A1.dir\Double-Linked-List.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\CS214_A1.dir
-  OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir
-
-build CMakeFiles/CS214_A1.dir/Circular-Linked-List.cpp.obj: CXX_COMPILER__CS214_A1_unscanned_Debug F$:/Github/CS214-A1/Part_2/Circular-Linked-List.cpp || cmake_object_order_depends_target_CS214_A1
-  DEP_FILE = CMakeFiles\CS214_A1.dir\Circular-Linked-List.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\CS214_A1.dir
   OBJECT_FILE_DIR = CMakeFiles\CS214_A1.dir
@@ -93,7 +87,7 @@ build CMakeFiles/CS214_A1.dir/Circular-Linked-List.cpp.obj: CXX_COMPILER__CS214_
 #############################################
 # Link the executable CS214_A1.exe
 
-build CS214_A1.exe: CXX_EXECUTABLE_LINKER__CS214_A1_Debug CMakeFiles/CS214_A1.dir/main.cpp.obj CMakeFiles/CS214_A1.dir/Single-Linked-List.cpp.obj CMakeFiles/CS214_A1.dir/stackArrayBased.cpp.obj CMakeFiles/CS214_A1.dir/stackLinkedListBased.cpp.obj CMakeFiles/CS214_A1.dir/Double-Linked-List.cpp.obj CMakeFiles/CS214_A1.dir/Circular-Linked-List.cpp.obj
+build CS214_A1.exe: CXX_EXECUTABLE_LINKER__CS214_A1_Debug CMakeFiles/CS214_A1.dir/Linked_List/SingleList.cpp.obj CMakeFiles/CS214_A1.dir/Linked_List/DoubleList.cpp.obj CMakeFiles/CS214_A1.dir/Linked_List/CircularList.cpp.obj CMakeFiles/CS214_A1.dir/Linked_List/Node.cpp.obj CMakeFiles/CS214_A1.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CS214_A1.dir
