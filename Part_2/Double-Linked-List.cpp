@@ -19,6 +19,7 @@ void doubleList<T>::insertAtHead(T element) {
         head = newNode;
         tail = newNode;
     } else {
+        head->prev = newNode;
         newNode->next = head;
         head = newNode;
     }

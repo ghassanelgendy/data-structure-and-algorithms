@@ -63,9 +63,10 @@ template <class T>
 class doubleList{
 private:
     int size;
-    Node<T> *head;
+
     Node<T> *tail;
 public:
+    Node<T> *head;
     doubleList();
 
     void insertAtHead(T element) ;
