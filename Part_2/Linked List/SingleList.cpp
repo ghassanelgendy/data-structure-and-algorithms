@@ -1,25 +1,24 @@
 //
-// Created by Ghassan on 4/24/2024.
+// Created by Ghassan on 4/25/2024.
 //
 #include <iostream>
-#include "Single-Linked-List.h"
+#include "SingleList.hpp"
 
 using namespace std;
 
 template<class T>
-doubleList<T>::doubleList(): size(0), head(nullptr), tail(nullptr) {
-    cout << "new double linked list is created\n";
+SingleList<T>::SingleList(): size(0), head(nullptr), tail(nullptr) {
 }
 
+
 template<class T>
-void doubleList<T>::insertAtHead(T element) {
+void SingleList<T>::insertAtHead(T element) {
     Node<T> *newNode;
     newNode = new Node<T>(element);
     if (!head) {
         head = newNode;
         tail = newNode;
     } else {
-        head->prev = newNode;
         newNode->next = head;
         head = newNode;
     }
@@ -27,32 +26,27 @@ void doubleList<T>::insertAtHead(T element) {
 }
 
 template<class T>
-
-void doubleList<T>::insertAtTail(T element) {
+void SingleList<T>::insertAtTail(T element) {
     Node<T> *newNode;
     newNode = new Node<T>(element);
     if (!head) {
         head = newNode;
     }
-    newNode->prev = tail;
     tail->next = newNode;
     tail = newNode;
-    tail->next = nullptr;
     size++;
-};
+}
 
 template<class T>
-
-void doubleList<T>::removeAtHead() {
+void SingleList<T>::removeAtHead() {
     Node<T> *newNode = head;
     head = head->next;
     delete newNode;
     size--;
-};
+}
 
 template<class T>
-
-void doubleList<T>::removeAtTail() {
+void SingleList<T>::removeAtTail() {
     for (Node<T> *cur = head; cur; cur = cur->next) {
         if (cur->next == tail) {
             delete tail;
@@ -61,30 +55,27 @@ void doubleList<T>::removeAtTail() {
         }
     }
     size--;
-};
+}
 
 template<class T>
-bool doubleList<T>::isEmpty() {
+bool SingleList<T>::isEmpty() const {
     return !size;
-};
+}
 
 template<class T>
-
-int doubleList<T>::linkedListSize() { return size; };
+int SingleList<T>::linkedListSize() { return size; }
 
 template<class T>
-
-void doubleList<T>::clear() {
+void SingleList<T>::clear() {
     while (head) {
         removeAtHead();
     }
     head = nullptr;
     size = 0;
-};
+}
 
 template<class T>
-
-void doubleList<T>::print() {
+void SingleList<T>::print() const {
     Node<T> *newNode = head;
     cout << '\n';
     while (newNode != nullptr) {
@@ -92,50 +83,45 @@ void doubleList<T>::print() {
         newNode = newNode->next;
     }
     cout << '\n';
-};
+}
 
 template<class T>
-
-void doubleList<T>::replaceAt(T newElement, int index) {
+void SingleList<T>::replaceAt(T newElement, int index) {
     int cnt{0};
     for (Node<T> *cur = head; cur; cur = cur->next, cnt++) {
         if (cnt == index) cur->data = newElement;
     }
-};
+}
 
 template<class T>
-
-bool doubleList<T>::isExist(T element) {
+bool SingleList<T>::isExist(T element) {
     for (Node<T> *cur = head; cur; cur = cur->next) {
         if (cur->data == element) return true;
     }
     return false;
-};
+}
 
 template<class T>
-
-T doubleList<T>::retrieveAt(int index) {
+T SingleList<T>::retrieveAt(int index) const {
     int cnt{0};
     for (Node<T> *cur = head; cur; cur = cur->next, cnt++) {
         if (cnt == index)return cur->data;
     }
     return false;
-};
+}
 
 
 template<class T>
-
-bool doubleList<T>::isItemAtEqual(T element, int index) {
+bool SingleList<T>::isItemAtEqual(T element, int index) {
     int cnt{0};
     for (Node<T> *cur = head; cur; cur = cur->next, cnt++) {
         if (cnt == index) return (element == cur->data);
     }
     return false;
-};
+}
 
 template<class T>
-
-void doubleList<T>::removeAt(int index) {
+void SingleList<T>::removeAt(int index) {
     int cnt{0};
     if (!index) {
         removeAtHead();
@@ -154,11 +140,10 @@ void doubleList<T>::removeAt(int index) {
             size--;
         }
     }
-};
+}
 
 template<class T>
-
-void doubleList<T>::insertAt(T element, int index) {
+void SingleList<T>::insertAt(T element, int index) {
     int cnt{0};
     if (!head) {
         insertAtHead(element);
@@ -174,10 +159,10 @@ void doubleList<T>::insertAt(T element, int index) {
             }
         }
     }
-};
+}
 
 template<class T>
-void doubleList<T>::swap(int firstItemIdx, int secondItemIdx) {
+void SingleList<T>::swap(int firstItemIdx, int secondItemIdx) {
     int cnt1{0}, cnt2{0};
     Node<T> *firstNode;
     Node<T> *secondNode;
@@ -189,5 +174,22 @@ void doubleList<T>::swap(int firstItemIdx, int secondItemIdx) {
             secondNode = cur;
         }
     }
-    std::swap(firstNode,secondNode);
-};
+    std::swap(firstNode, secondNode);
+}
+
+template<class T>
+ostream &operator<<(ostream &os, const SingleList<T> &list) {
+    Node<T> *current = list.head;
+    while (current != nullptr) {
+        os << current->data << " ";
+        current = current->next;
+    }
+    return os;
+}
+
+template<class T>
+T SingleList<T>::operator[](int idx) {
+    return retrieveAt(idx);
+}
+
+
