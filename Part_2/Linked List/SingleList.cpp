@@ -163,19 +163,34 @@ void SingleList<T>::insertAt(T element, int index) {
 
 template<class T>
 void SingleList<T>::swap(int firstItemIdx, int secondItemIdx) {
-    int cnt1{0}, cnt2{0};
-    Node<T> *firstNode;
-    Node<T> *secondNode;
-    for (Node<T> *cur = head; cur; cur = cur->next, cnt1++, cnt2++) {
-        if (firstItemIdx == cnt1) {
-            firstNode = cur;
-        }
-        if (secondItemIdx == cnt2) {
-            secondNode = cur;
-        }
+    if (firstItemIdx == secondItemIdx) return;
+    Node<T> *prev1 = nullptr, *cur1 = head;
+    Node<T> *prev2 = nullptr, *cur2 = head;
+    int idx = 0;
+
+    while (cur1 && idx != firstItemIdx) {
+        prev1 = cur1;
+        cur1 = cur1->next;
+        idx++;
     }
-    std::swap(firstNode, secondNode);
+
+    idx = 0;
+    while (cur2 && idx != secondItemIdx) {
+        prev2 = cur2;
+        cur2 = cur2->next;
+        idx++;
+    }
+    if (!cur1 || !cur2) return;
+    if (prev1) prev1->next = cur2;
+    else head = cur2;
+    if (prev2) prev2->next = cur1;
+    else head = cur1;
+
+    Node<T>* temp = cur1->next;
+    cur1->next = cur2->next;
+    cur2->next = temp;
 }
+
 
 template<class T>
 ostream &operator<<(ostream &os, const SingleList<T> &list) {

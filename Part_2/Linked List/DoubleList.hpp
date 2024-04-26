@@ -22,7 +22,8 @@ public:
     void reversePrint();
 
     void removeAt(int index) override;
+
+    void swap(int firstItemIdx, int secondItemIdx) override;
+
 };
-
-
 #endif //CS214_A1_DOUBLELIST_HPP

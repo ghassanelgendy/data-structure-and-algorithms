@@ -428,5 +428,7 @@ int main() {
     std::cout << "Size of the circleList after clear: " << circleList.linkedListSize() << std::endl;
     std::cout << "Expected result: 0\n";
 
+
+
     return 0;
 }

@@ -100,3 +100,39 @@ void DoubleList<T>::removeAt(int index) {
         }
     }
 }
+
+template<class T>
+void DoubleList<T>::swap(int firstItemIdx, int secondItemIdx) {
+    if (firstItemIdx == secondItemIdx) return;
+    Node<T> *cur1 = this->head;
+    Node<T> *cur2 = this->head;
+    int idx = 0;
+
+    while (cur1 && idx != firstItemIdx) {
+        cur1 = cur1->next;
+        idx++;
+    }
+
+    idx = 0;
+    while (cur2 && idx != secondItemIdx) {
+        cur2 = cur2->next;
+        idx++;
+    }
+
+    if (!cur1 || !cur2) return;
+
+    if (cur1->prev) cur1->prev->next = cur2;
+    else this->head = cur2;
+    if (cur2->prev) cur2->prev->next = cur1;
+    else this->head = cur1;
+
+    if (cur1->next) cur1->next->prev = cur2;
+    if (cur2->next) cur2->next->prev = cur1;
+
+    Node<T>* tempPrev = cur1->prev;
+    Node<T>* tempNext = cur1->next;
+    cur1->prev = cur2->prev;
+    cur1->next = cur2->next;
+    cur2->prev = tempPrev;
+    cur2->next = tempNext;
+}

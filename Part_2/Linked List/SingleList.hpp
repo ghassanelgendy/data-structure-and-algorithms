@@ -39,7 +39,7 @@ public:
 
     bool isItemAtEqual(T element, int index);
 
-    void swap(int firstItemIdx, int secondItemIdx);    // swap tw nodes without swapping data.
+    virtual   void swap(int firstItemIdx, int secondItemIdx);    // swap tw nodes without swapping data.
 
     bool isEmpty() const;
 
